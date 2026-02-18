@@ -17,7 +17,7 @@ COPY ./src ./src
 RUN cargo install --path .
 
 # Use a base image with a newer version of glibc
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 # Copy the built binary from the builder stage
 COPY --from=builder /usr/local/cargo/bin/drawing /usr/local/bin/drawing
